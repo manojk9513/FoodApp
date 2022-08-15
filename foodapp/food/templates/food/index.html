@@ -1,0 +1,34 @@
+{% extends 'food/base.html' %}
+
+{% block head %}
+    <title>Menu</title>
+{% endblock %}
+{% block body %}
+
+    <center><h1 class="display-1">Menu</h1><center><br/>
+        <br>
+    {% for i in item_list %}
+        <div class="row" style="border-style: solid;background-color: #F7BFB1;">
+            <div class="col-md-3 offset-md-2">
+                <br>
+                <img class="card" height="180px" width="250px" src="{{i.item_img}}"/>
+                <br>
+            </div>
+            <div class="col-md-4">
+                <br>
+                <h3>{{i.item_name}}</h3>
+                <h6>₹{{i.item_price}}</h6>
+                <h6>Posted by: {{i.user_name}}</h6>
+            </div>
+            <div class="col-md-2">
+                <br>
+                <a href="{% url 'food:details' i.id %}" class="btn btn-success">Details</a> 
+ 
+            </div>
+        </div>
+    {% endfor %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+        
+
+

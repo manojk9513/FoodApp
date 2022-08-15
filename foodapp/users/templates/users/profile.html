@@ -1,0 +1,24 @@
+{% extends 'food/base.html' %}
+{%block body%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <div class="card-title">
+                        <h1>{{ user.username }}</h1>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <h1>{{ user.username }}</h1>
+                        <img width="100px" height="100px" src="{{ user.profile.img.url }}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

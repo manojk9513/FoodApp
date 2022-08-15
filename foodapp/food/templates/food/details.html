@@ -1,0 +1,31 @@
+{% extends 'food/base.html' %}
+{% block head %}
+    <title>{{item.item_name}}</title>
+{% endblock %}
+{% block body %}
+<div class="container" style="background-color:#F7BFB1;">
+    <div class="row">
+        <div class="col-md-6"> 
+            <br><br>
+            <img class="card" height="350px" width="450px" src="{{item.item_img}}"/>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <h1>{{object.item_name}}</h1>
+            <br>
+            <h3>{{object.item_desc}}</h3>
+            <br>
+            <h2>₹{{object.item_price}}</h2>
+            <br>
+            <h3>Posted by: {{object.user_name}}</h3>
+            <br>
+            {% if user.is_authenticated %}
+            
+                <a class="link-danger" href="{% url 'food:delete_item' item.id %}"><input type="button" value="Delete"></a>
+                <a class="link-info" href="{% url 'food:update' item.id %}"><input type="button" value="Update"></a>
+            {%endif%}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

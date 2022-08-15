@@ -1,0 +1,10 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+    <div class="alert alert-danger" role="alert">
+        <center>
+        <h1>User Logged out</h1>
+        </center>
+    </div>
+    <a href="{% url 'food:index' %}">Home</a>
+{% endblock %}
